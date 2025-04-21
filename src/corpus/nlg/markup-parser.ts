@@ -2,11 +2,14 @@ import { Span, SpanType } from './span';
 
 export class MarkupParser {
     private markup: string;
+    private markupLength: number;
     private spans: Span[] = [];
     private position = 0;
 
     constructor(markup: string) {
         this.markup = markup;
+        this.markupLength = markup?.length;
+
     }
 
     public parse(): Span[] {
@@ -42,7 +45,7 @@ export class MarkupParser {
     }
 
     private canRead(): boolean {
-        return this.position < this.markup.length;
+        return this.position < this.markupLength;
     }
 
     private peek(): string {

@@ -17,7 +17,7 @@ const fatha = 0x064E;
 const damma = 0x064F;
 const kasra = 0x0650;
 const shadda = 0x0651;
-const sukun = 0x0652;
+const sukun = 0x06e1; //0x0652; ARABIC SMALL HIGH DOTLESS HEAD OF KHAH
 const maddah = 0x0653;
 
 const diacriticsSet = new Set([
@@ -63,8 +63,8 @@ export class ArabicTextService {
             }
 
             // suffix
-            const next = i < segmentCount - 1 ? segments[i + 1] : undefined;
-            shouldJoin = next !== undefined && this.shouldJoinAfter(segment) && this.shouldJoinBefore(next);
+            // const next = i < segmentCount - 1 ? segments[i + 1] : undefined;
+            // shouldJoin = next !== undefined && this.shouldJoinAfter(segment) && this.shouldJoinBefore(next);
             if (shouldJoin) {
                 joinedSegment += '&zwj;';
             }

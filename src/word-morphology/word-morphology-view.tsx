@@ -41,7 +41,9 @@ export const WordMorphologyView = ({ wordMorphology }: Props) => {
                                         <div key={`description-${i}`} className='segment'>
                                             <NodeCircle className={className} />
                                             <div className='description'>
-                                                <strong className={className}>{segment.posTag}</strong> &ndash; <MarkupView markup={segmentDescriptions[i++]} />
+                                                <strong className={className}>{segment.posTag}</strong>
+                                                –
+                                                <MarkupView markup={segmentDescriptions[i++]} />
                                             </div>
                                         </div>
                                     )
